@@ -73,10 +73,10 @@ GROUP BY customer_id,product_name;
 ```
 | customer_id | first_purchased_product |
 |-------------|-----------------------|
-| A           | Sushi                 |
-| A           | Curry                 |
-| B           | Curry                 |
-| C           | Ramen                 |
+| A           | sushi                 |
+| A           | curry                 |
+| B           | curry                 |
+| C           | ramen                 |
 
 4. **Q4. What is the most purchased item on the menu and how many times was it purchased by all customers?**
 - This question needs to be solved in two parts, in part 1, we'll find the most purchased item and in part 2, we'll find how mny times its purchased by all customers
@@ -95,7 +95,7 @@ LIMIT 1;                                           -- this gives the most purcha
 ```
 | Most purchased Product | Purchase Count |
 |---------------------|----------------|
-| Ramen               | 8              |
+| ramen               | 8              |
 
 ```sql
 -- Part 2
@@ -118,15 +118,161 @@ ORDER BY purchase_count DESC;                    -- this gives the list of custo
 | B           | 2              |
 | C           | 3              |
 
+5. **Q5. Which item was the most popular for each customer?**
+```sql
+WITH cte_popular_products as ( 
+	SELECT 
+		sales.customer_id,
+		menu.product_name,
+		COUNT(*) as purchase_count,
+		DENSE_RANK() OVER( PARTITION BY sales.customer_id 
+						ORDER BY COUNT(*) DESC) AS rnk
+	FROM sales
+	INNER JOIN menu ON sales.product_id = menu.product_id
+	GROUP BY sales.customer_id, menu.product_name )
+SELECT 
+	customer_id,
+    product_name,
+    purchase_count
+FROM cte_popular_products
+WHERE rnk=1;
+```
+| customer_id | product_name | purchase_count |
+|-------------|--------------|----------------|
+| A           | ramen        | 3              |
+| B           | curry        | 2              |
+| B           | sushi        | 2              |
+| B           | ramen        | 2              |
+| C           | ramen        | 3              |
+
+
+6. **Q6. Which item was purchased first by the customer after they became a member?**
+```sql
+WITH cte_after_membership AS (
+  SELECT
+    members.customer_id, 
+    sales.product_id,
+    DENSE_RANK() OVER (
+      PARTITION BY members.customer_id
+      ORDER BY sales.order_date) AS densrank
+  FROM members
+  INNER JOIN sales
+    ON members.customer_id = sales.customer_id
+    AND sales.order_date > members.join_date
+)
+SELECT 
+  cte_after_membership.customer_id, 
+  menu.product_name 
+FROM cte_after_membership
+INNER JOIN menu
+  ON cte_after_membership.product_id = menu.product_id
+WHERE densrank = 1
+ORDER BY cte_after_membership.customer_id ASC;
+```
+| customer_id | product_name |
+|-------------|--------------|
+| A           | ramen        |
+| B           | sushi        |
+
+7. **Q7. Which item was purchased just before the customer became a member?**
+```sql
+WITH cte_after_membership AS (
+  SELECT
+    members.customer_id, 
+    sales.product_id,
+    DENSE_RANK() OVER (
+      PARTITION BY members.customer_id
+      ORDER BY sales.order_date) AS densrank
+  FROM members
+  INNER JOIN sales
+    ON members.customer_id = sales.customer_id
+    AND sales.order_date < members.join_date
+)
+SELECT 
+  cte_after_membership.customer_id, 
+  menu.product_name 
+FROM cte_after_membership
+INNER JOIN menu
+  ON cte_after_membership.product_id = menu.product_id
+WHERE densrank = 1
+ORDER BY cte_after_membership.customer_id ASC;
+```
+| customer_id | product_name |
+|-------------|--------------|
+| A           | sushi        |
+| A           | curry        |
+| B           | curry        |
+
+8. **Q8. What is the total items and amount spent for each member before they became a member?**
+```sql
+SELECT
+	sales.customer_id,
+    COUNT(sales.product_id) AS total_items,
+    SUM(menu.price) AS total_amt_spent
+FROM sales
+JOIN members ON sales.customer_id = members.customer_id
+JOIN menu ON sales.product_id = menu.product_id
+WHERE sales.order_date < members.join_date
+group by sales.customer_id
+ORDER BY sales.customer_id;
+```
+| customer_id | total_items | total_amt_spent |
+|-------------|-------------|--------------------|
+| A           | 2           | 25                 |
+| B           | 3           | 40                 |
+
+9. **Q9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier, how many points would each customer have?**
+```sql
+SELECT 
+    sales.customer_id,
+    SUM(menu.price) AS total_price,
+    SUM(CASE
+        WHEN menu.product_name = 'sushi' THEN menu.price * 20
+        ELSE menu.price * 10
+    END) AS total_points
+FROM sales
+	JOIN menu ON sales.product_id = menu.product_id
+GROUP BY customer_id;
+```
+| customer_id | total_price | total_points |
+|-------------|-------------|--------------------|
+| A           | 76          | 860                |
+| B           | 74          | 940                |
+| C           | 36          | 360                |
+
+10. **Q10. In the first week after a customer joins the program (including their join date), they earn 2x points on all items, not just sushi. How many points do customers A and B have at the end of January?**
+```sql
+SELECT 
+	sales.customer_id,
+    SUM(menu.price) AS total_price,
+    SUM(CASE 
+			WHEN sales.order_date BETWEEN members.join_date AND DATE_ADD(members.join_date, INTERVAL 6 DAY) THEN menu.price*20
+			ELSE 
+				CASE WHEN menu.product_name = 'sushi' THEN menu.price * 20
+				ELSE menu.price * 10
+				END
+			END) AS points
+FROM sales
+INNER JOIN menu ON sales.product_id = menu.product_id
+INNER JOIN members ON sales.customer_id = members.customer_id
+WHERE sales.order_date <= '2021-01-31'
+AND sales.customer_id IN ('A','B')
+GROUP BY sales.customer_id
+ORDER BY sales.customer_id;
+```
+| customer_id | total_price | points |
+|-------------|-------------|--------|
+| A           | 76          | 1370   |
+| B           | 62          | 820    |
+
+4. **Q4. What is the most purchased item on the menu and how many times was it purchased by all customers?**
 
 
 
 
 
-  
 
 
-
-
+4. **Q4. What is the most purchased item on the menu and how many times was it purchased by all customers?**
 
 For a detailed walkthrough of this case study, visit the video on [iThinkData YouTube channel](https://www.youtube.com/@iThinkData).
