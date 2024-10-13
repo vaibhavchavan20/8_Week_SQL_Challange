@@ -4,6 +4,8 @@
 
 In this case study, we are tasked with helping Danny, the owner of a small restaurant, analyze his business data. The goal is to help him better understand customer behavior, optimize sales strategies, and improve operational efficiency. The case study involves queries focusing on simple aggregations, joins, and date-based filtering.
 
+### View the detailed case study on [www.8weeksqlchallange.com](https://8weeksqlchallenge.com/case-study-1/)
+
 ## 📝 Objectives
 
 The main objectives of the case study are:
