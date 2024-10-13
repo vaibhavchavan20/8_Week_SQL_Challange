@@ -356,16 +356,19 @@ ORDER BY
 | C           | 2021-01-01  | ramen        | 12    | N             | NULL    |
 | C           | 2021-01-07  | ramen        | 12    | N             | NULL    |
 
-```  
-   
-For more such SQL Challenges and Data Analysis related stuff, 
-Subscribe my youtube channel [www.youtube.com/@iThinkData](www.youtube.com/@iThinkData)
 
-Github: www.github.com/vaibhavchavan20
-LinkedIn: www.linkedin.com/in/vaibhav-chavan
-WhatsApp: www.bit.ly/WhatsAppiThinkData 
-
-
- ```
 
 For a detailed walkthrough of this case study, visit the video on [iThinkData YouTube channel Playlist](https://youtube.com/playlist?list=PLCbFGoYuSXyoboW7yD920x9TIVPu24jCd&si=qJCZiZ00d1oqTwoP).
+
+
+### 🙋‍♂️ About Me
+
+I’m **Vaibhav Chavan**, the creator of [iThinkData](https://www.youtube.com/@iThinkData?sub_confirmation=1), a platform dedicated to making data analytics and SQL easy to understand for everyone. Follow along as I dive deep into SQL tutorials, case studies, and data projects on YouTube.
+
+**🌟 Stay Connected with iThinkData ! 🌟**
+
+**🎥 Subscribe to [iThinkData](https://www.youtube.com/@iThinkData?sub_confirmation=1) :**  🔔 Don't miss out on weekly data challenges, tutorials, and expert insights! 💡📈
+
+**👨‍💼 [LinkedIn](https://linkedin.com/in/vaibhav-chavan) :**  📊 Let’s connect professionally and build a powerful data-driven network! 💼🌐
+
+**💬 Join My [WhatsApp Channel](https://whatsapp.com/channel/0029VaoircxInlqLbopDNS2K) :** 📱 Be the first to get exclusive content, project updates, and new videos! 🚀📊
