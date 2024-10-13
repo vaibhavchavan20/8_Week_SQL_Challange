@@ -27,11 +27,11 @@ In this folder, you will find the following files:
 1. **Q1: What is the total amount each customer spent at the restaurant?**
 ```sql
 SELECT
-sales.customer_id,
-SUM(menu.price) AS 'Total Spending in $'
+	sales.customer_id,
+	SUM(menu.price) AS 'Total Spending in $'
 FROM sales
 INNER JOIN menu ON
-sales.product_id=menu.product_id
+	sales.product_id=menu.product_id
 GROUP BY sales.customer_id
 ORDER BY sales.customer_id;
 ```
@@ -46,7 +46,7 @@ ORDER BY sales.customer_id;
 ```sql
 SELECT
 	customer_id,
-    COUNT(DISTINCT(order_date)) AS days_visited
+	COUNT(DISTINCT(order_date)) AS days_visited
 FROM sales
 GROUP BY customer_id;
 ```
@@ -59,15 +59,15 @@ GROUP BY customer_id;
 3. **Q3. What was the first item from the menu purchased by each Customer?**
 ```sql
 SELECT 
-		customer_id,
+	customer_id,
         product_name AS first_purchased_product
 FROM
     (SELECT 
-		sales.customer_id,
-		menu.product_name,
-		DENSE_RANK() OVER( PARTITION BY sales.customer_id ORDER BY sales.order_date) As rnk
-	FROM sales
-	INNER JOIN menu ON sales.product_id=menu.product_id) AS sales_rank
+	sales.customer_id,
+	menu.product_name,
+	DENSE_RANK() OVER( PARTITION BY sales.customer_id ORDER BY sales.order_date) As rnk
+      FROM sales
+      INNER JOIN menu ON sales.product_id=menu.product_id) AS sales_rank
 WHERE rnk = 1
 GROUP BY customer_id,product_name;
 ```
@@ -85,7 +85,7 @@ GROUP BY customer_id,product_name;
 
 SELECT 
 	menu.product_name AS 'Most purchased Product',
-    COUNT(sales.product_id) AS 'Purchase Count'
+	COUNT(sales.product_id) AS 'Purchase Count'
 FROM sales 
 INNER JOIN menu 
 	ON sales.product_id = menu.product_id
@@ -102,13 +102,13 @@ LIMIT 1;                                           -- this gives the most purcha
 
 SELECT 
 	sales.customer_id,
-    COUNT(sales.product_id) AS purchase_count
+	COUNT(sales.product_id) AS purchase_count
 FROM sales
 INNER JOIN menu ON sales.product_id = menu.product_id
 WHERE sales.product_id = (SELECT product_id FROM sales
-							GROUP BY product_id
-                            ORdER BY count(product_id)
-                            DESC LIMIT 1)
+			  GROUP BY product_id
+			  ORdER BY count(product_id)
+			  DESC LIMIT 1)
 GROUP BY sales.customer_id
 ORDER BY purchase_count DESC;                    -- this gives the list of customers who have purchased highest purchased item
 ```
@@ -126,14 +126,14 @@ WITH cte_popular_products as (
 		menu.product_name,
 		COUNT(*) as purchase_count,
 		DENSE_RANK() OVER( PARTITION BY sales.customer_id 
-						ORDER BY COUNT(*) DESC) AS rnk
+				   ORDER BY COUNT(*) DESC) AS rnk
 	FROM sales
 	INNER JOIN menu ON sales.product_id = menu.product_id
 	GROUP BY sales.customer_id, menu.product_name )
 SELECT 
 	customer_id,
-    product_name,
-    purchase_count
+	product_name,
+	purchase_count
 FROM cte_popular_products
 WHERE rnk=1;
 ```
@@ -161,11 +161,11 @@ WITH cte_after_membership AS (
     AND sales.order_date > members.join_date
 )
 SELECT 
-  cte_after_membership.customer_id, 
-  menu.product_name 
+  	cte_after_membership.customer_id, 
+	  menu.product_name 
 FROM cte_after_membership
 INNER JOIN menu
-  ON cte_after_membership.product_id = menu.product_id
+ 	 ON cte_after_membership.product_id = menu.product_id
 WHERE densrank = 1
 ORDER BY cte_after_membership.customer_id ASC;
 ```
@@ -178,11 +178,11 @@ ORDER BY cte_after_membership.customer_id ASC;
 ```sql
 WITH cte_after_membership AS (
   SELECT
-    members.customer_id, 
-    sales.product_id,
-    DENSE_RANK() OVER (
-      PARTITION BY members.customer_id
-      ORDER BY sales.order_date) AS densrank
+	members.customer_id, 
+	sales.product_id,
+	DENSE_RANK() OVER (
+        PARTITION BY members.customer_id
+        ORDER BY sales.order_date) AS densrank
   FROM members
   INNER JOIN sales
     ON members.customer_id = sales.customer_id
@@ -207,8 +207,8 @@ ORDER BY cte_after_membership.customer_id ASC;
 ```sql
 SELECT
 	sales.customer_id,
-    COUNT(sales.product_id) AS total_items,
-    SUM(menu.price) AS total_amt_spent
+	COUNT(sales.product_id) AS total_items,
+	SUM(menu.price) AS total_amt_spent
 FROM sales
 JOIN members ON sales.customer_id = members.customer_id
 JOIN menu ON sales.product_id = menu.product_id
@@ -244,14 +244,14 @@ GROUP BY customer_id;
 ```sql
 SELECT 
 	sales.customer_id,
-    SUM(menu.price) AS total_price,
-    SUM(CASE 
-			WHEN sales.order_date BETWEEN members.join_date AND DATE_ADD(members.join_date, INTERVAL 6 DAY) THEN menu.price*20
-			ELSE 
-				CASE WHEN menu.product_name = 'sushi' THEN menu.price * 20
-				ELSE menu.price * 10
-				END
-			END) AS points
+	SUM(menu.price) AS total_price,
+	SUM(CASE 
+		WHEN sales.order_date BETWEEN members.join_date AND DATE_ADD(members.join_date, INTERVAL 6 DAY) THEN menu.price*20
+		ELSE 
+			CASE WHEN menu.product_name = 'sushi' THEN menu.price * 20
+			ELSE menu.price * 10
+			END
+		END) AS points
 FROM sales
 INNER JOIN menu ON sales.product_id = menu.product_id
 INNER JOIN members ON sales.customer_id = members.customer_id
@@ -327,9 +327,7 @@ SELECT
     *,
     CASE
         WHEN member_status = 'Y' THEN
-            DENSE_RANK() OVER (
-				PARTITION BY customer_id 
-                ORDER BY order_date)
+            DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_date)
         ELSE
             NULL
     END AS ranking
