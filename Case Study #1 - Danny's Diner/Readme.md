@@ -35,9 +35,14 @@ sales.product_id=menu.product_id
 GROUP BY sales.customer_id
 ORDER BY sales.customer_id;
 ```
+| Customer ID | Total Sales |
+|-------------|-------------|
+| A           | 76          |
+| B           | 74          |
+| C           | 36          |
 
 
-3. **Q2: How many days has each customer visited the restaurant?**
+2. **Q2: How many days has each customer visited the restaurant?**
    - [SQL Solution](#)
    - [Explanation](#)
    - [Output](#)
