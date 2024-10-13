@@ -42,6 +42,8 @@ Each folder contains SQL scripts for the solutions, along with detailed explanat
 2. Review the SQL scripts provided for each question in the case study.
 3. Use these scripts to solve the problems in your own environment.
 
+   **Note: All Solutions are Coded with MySQL**
+
 Feel free to download, modify, or adapt the solutions to fit your learning needs. Contributions and feedback are welcome!
 
 ## 🔗 Additional Resources
