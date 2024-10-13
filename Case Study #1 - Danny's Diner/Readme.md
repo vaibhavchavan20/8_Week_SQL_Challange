@@ -43,16 +43,87 @@ ORDER BY sales.customer_id;
 
 
 2. **Q2: How many days has each customer visited the restaurant?**
+```sql
+SELECT
+	customer_id,
+    COUNT(DISTINCT(order_date)) AS days_visited
+FROM sales
+GROUP BY customer_id;
+```
+| customer_id | days_visited |
+|-------------|--------------|
+| A           | 4            |
+| B           | 6            |
+| C           | 2            |
 
-3. 2. **Q2: How many days has each customer visited the restaurant?**
+3. **Q3. What was the first item from the menu purchased by each Customer?**
+```sql
+SELECT 
+		customer_id,
+        product_name AS first_purchased_product
+FROM
+    (SELECT 
+		sales.customer_id,
+		menu.product_name,
+		DENSE_RANK() OVER( PARTITION BY sales.customer_id ORDER BY sales.order_date) As rnk
+	FROM sales
+	INNER JOIN menu ON sales.product_id=menu.product_id) AS sales_rank
+WHERE rnk = 1
+GROUP BY customer_id,product_name;
+```
+| customer_id | first_purchased_product |
+|-------------|-----------------------|
+| A           | Sushi                 |
+| A           | Curry                 |
+| B           | Curry                 |
+| C           | Ramen                 |
+
+4. **Q4. What is the most purchased item on the menu and how many times was it purchased by all customers?**
+- This question needs to be solved in two parts, in part 1, we'll find the most purchased item and in part 2, we'll find how mny times its purchased by all customers
+```sql
+-- Part 1
+
+SELECT 
+	menu.product_name AS 'Most purchased Product',
+    COUNT(sales.product_id) AS 'Purchase Count'
+FROM sales 
+INNER JOIN menu 
+	ON sales.product_id = menu.product_id
+GROUP BY menu.product_name
+ORDER BY COUNT(sales.product_id) DESC
+LIMIT 1;                                           -- this gives the most purchased item on menu
+```
+| Most purchased Product | Purchase Count |
+|---------------------|----------------|
+| Ramen               | 8              |
+
+```sql
+-- Part 2
+
+SELECT 
+	sales.customer_id,
+    COUNT(sales.product_id) AS purchase_count
+FROM sales
+INNER JOIN menu ON sales.product_id = menu.product_id
+WHERE sales.product_id = (SELECT product_id FROM sales
+							GROUP BY product_id
+                            ORdER BY count(product_id)
+                            DESC LIMIT 1)
+GROUP BY sales.customer_id
+ORDER BY purchase_count DESC;                    -- this gives the list of customers who have purchased highest purchased item
+```
+| customer_id | purchase_count |
+|-------------|----------------|
+| A           | 3              |
+| B           | 2              |
+| C           | 3              |
+
+
+
+
+
+
   
-2. **Q2: How many days has each customer visited the restaurant?**
-3. 2. **Q2: How many days has each customer visited the restaurant?**
-   3. 2. **Q2: How many days has each customer visited the restaurant?**
-      3. 2. **Q2: How many days has each customer visited the restaurant?**
-         3. 2. **Q2: How many days has each customer visited the restaurant?**
-            3. 
-
 
 
 
