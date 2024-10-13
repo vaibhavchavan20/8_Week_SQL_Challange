@@ -13,25 +13,25 @@ This repository is organized into eight folders, each corresponding to a specifi
 - **[Case Study #1: Danny's Diner](https://github.com/vaibhavchavan20/8_Week_SQL_Challange/tree/main/Case%20Study%20%231%20-%20Danny's%20Diner)**  
   Focus: Simple aggregations, joins, and date-based filtering.
 
-- **Case Study #2: Pizza Runner**  
+- **[Case Study #2: Pizza Runner](https://github.com/vaibhavchavan20/8_Week_SQL_Challange/tree/main/Case%20Study%20%232%20-%20Pizza%20Runner)**  
   Focus: Handling NULL values, data cleaning, and filtering.
 
-- **Case Study #3: Foodie-Fi**  
+- **[Case Study #3: Foodie-Fi](https://github.com/vaibhavchavan20/8_Week_SQL_Challange/tree/main/Case%20Study%20%233%20-%20Foodie-Fi)**  
   Focus: Subscription-based data analysis, window functions.
 
-- **Case Study #4: Data Bank**  
+- **[Case Study #4: Data Bank](https://github.com/vaibhavchavan20/8_Week_SQL_Challange/tree/main/Case%20Study%20%234%20-%20Data%20Bank)**  
   Focus: Customer segmentation, advanced filtering, and ranking.
 
-- **Case Study #5: Data Mart**  
+- **[Case Study #5: Data Mart](https://github.com/vaibhavchavan20/8_Week_SQL_Challange/tree/main/Case%20Study%20%235%20-%20Data%20Mart)**  
   Focus: CTEs, window functions, and rolling aggregations.
 
-- **Case Study #6: Clique Bait**  
+- **[Case Study #6: Clique Bait](https://github.com/vaibhavchavan20/8_Week_SQL_Challange/tree/main/Case%20Study%20%236%20-%20Clique%20Bait)**  
   Focus: Marketing campaign analysis, funnel conversion.
 
-- **Case Study #7: Balanced Tree**  
+- **[Case Study #7: Balanced Tree](https://github.com/vaibhavchavan20/8_Week_SQL_Challange/tree/main/Case%20Study%20%237%20-%20Balanced%20Tree%20Clothing%20Co.)**  
   Focus: Financial performance and stock trading.
 
-- **Case Study #8: Fresh Segments**  
+- **[Case Study #8: Fresh Segments](https://github.com/vaibhavchavan20/8_Week_SQL_Challange/tree/main/Case%20Study%20%238%20-%20Fresh%20Segments)**  
   Focus: Customer behavior and market segmentation.
 
 Each folder contains SQL scripts for the solutions, along with detailed explanations and the thought process behind each query.
