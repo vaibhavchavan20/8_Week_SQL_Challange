@@ -36,4 +36,4 @@ In this folder, you will find the following files:
 
 ## 🔗 Additional Resources
 
-For a detailed walkthrough of this case study, visit the video on [iThinkData YouTube channel](https://www.youtube.com/channel/UCu7SbKQl-NgAQTGZ7wMYAxw).
+For a detailed walkthrough of this case study, visit the video on [iThinkData YouTube channel](https://www.youtube.com/@iThinkData).
