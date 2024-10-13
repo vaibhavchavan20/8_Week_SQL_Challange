@@ -47,8 +47,10 @@ Feel free to download, modify, or adapt the solutions to fit your learning needs
 ## 🔗 Additional Resources
 
 - Visit the official [8 Week SQL Challenge website](https://8weeksqlchallenge.com/) for the full case study descriptions.
-- Watch my YouTube series, [Danny's SQL Challenge Solutions](https://www.youtube.com/channel/UCu7SbKQl-NgAQTGZ7wMYAxw), where I walk through each case study with explanations.
+- Watch my YouTube series, [Danny's SQL Challenge Solutions](https://youtube.com/playlist?list=PLCbFGoYuSXyoboW7yD920x9TIVPu24jCd&si=z7Wf9oc0ZZhZ7ef1), where I walk through each case study with explanations.
 
 ## 🙋‍♂️ About Me
 
-I’m **Vaibhav Chavan**, the creator of [iThinkData](https://www.youtube.com/channel/UCu7SbKQl-NgAQTGZ7wMYAxw), a platform dedicated to making data analytics and SQL easy to understand for everyone. Follow along as I dive deep into SQL tutorials, case studies, and data projects on YouTube.
+I’m **Vaibhav Chavan**, the creator of [iThinkData](https://www.youtube.com/@iThinkData), a platform dedicated to making data analytics and SQL easy to understand for everyone. Follow along as I dive deep into SQL tutorials, case studies, and data projects on YouTube.
+
+
