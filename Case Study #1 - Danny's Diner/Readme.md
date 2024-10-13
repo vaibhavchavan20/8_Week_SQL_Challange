@@ -14,9 +14,9 @@ The main objectives of the case study are:
 ## 🔧 How to Use
 
 In this folder, you will find the following files:
-- **SQL Queries**: This file contains all the queries used to answer the case study questions.
-- **Detailed Solutions**: Each question is answered with an explanation of the query and the output generated.
-- **Output Results**: Screenshots or tables showing the final output of each query.
+- **Database_Creation_Queries.sql**: This .sql file contains all queries to create database and tables.
+- **Questions and Answers Queries.sql**: This file contains all the queries used to answer the case study questions.
+- **Questions And Answers with Queries and Output.pdf**: Each question is answered with the query and the output generated.
 
 ## 📑 Table of Contents
 
