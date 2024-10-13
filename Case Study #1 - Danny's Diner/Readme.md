@@ -356,10 +356,10 @@ ORDER BY
 | C           | 2021-01-01  | ramen        | 12    | N             | NULL    |
 | C           | 2021-01-07  | ramen        | 12    | N             | NULL    |
 
-```sql  
+```  
    
 For more such SQL Challenges and Data Analysis related stuff, 
-Subscribe my youtube channel www.youtube.com/@iThinkData
+Subscribe my youtube channel [www.youtube.com/@iThinkData](www.youtube.com/@iThinkData)
 
 Github: www.github.com/vaibhavchavan20
 LinkedIn: www.linkedin.com/in/vaibhav-chavan
