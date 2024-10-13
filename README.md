@@ -53,16 +53,14 @@ Feel free to download, modify, or adapt the solutions to fit your learning needs
 
 I’m **Vaibhav Chavan**, the creator of [iThinkData](https://www.youtube.com/@iThinkData?sub_confirmation=1), a platform dedicated to making data analytics and SQL easy to understand for everyone. Follow along as I dive deep into SQL tutorials, case studies, and data projects on YouTube.
 
-🌟 Stay Connected with iThinkData ! 🌟
+### 🌟 Stay Connected with iThinkData ! 🌟
 
-🚀 Follow me everywhere for more insights, tutorials, and data related tips, interview tips:
+**🚀 Follow me everywhere for more insights, tutorials, and data related tips, interview tips:**
 
-👨‍💼 LinkedIn:  https://linkedin.com/in/vaibhav-chavan
+**👨‍💼 LinkedIn:**  [https://linkedin.com/in/vaibhav-chavan](https://linkedin.com/in/vaibhav-chavan)
 📊 Let’s connect professionally and build a powerful data-driven network! 💼🌐
 
-💬 Join My WhatsApp Channel: https://whatsapp.com/channel/0029VaoircxInlqLbopDNS2K
+**💬 Join My WhatsApp Channel:** [https://whatsapp.com/channel/0029VaoircxInlqLbopDNS2K](https://whatsapp.com/channel/0029VaoircxInlqLbopDNS2K)
 📱 Be the first to get exclusive content, project updates, and new videos! 🚀📊
 
-💻 GitHub: https://github.com/vaibhavchavan20
-💡 Check out my code, projects, and collaborate on data science & analytics solutions! 💻🔍
 
