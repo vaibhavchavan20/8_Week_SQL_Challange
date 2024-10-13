@@ -1,4 +1,4 @@
-# Danny Ma's 8 Week SQL Challenge Solutions by iThinkData
+# Danny Ma's 8 Week SQL Challenge Solutions by Vaibhav on iThinkData
 
 Welcome to the **8 Week SQL Challenge** solutions repository! This repository contains my personal solutions to the popular SQL case studies created by [Danny Ma](https://8weeksqlchallenge.com/). Each case study has been tackled in detail, providing solutions that are easy to understand and implement, even for beginners.
 
