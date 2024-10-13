@@ -29,18 +29,13 @@ In this folder, you will find:
    - [Explanation](#)
    - [Output](#)
 
-3. **Q3: What percentage of orders were canceled?**
-   - [SQL Solution](#)
-   - [Explanation](#)
-   - [Output](#)
 
-... (include more questions as per your case study details)
 
 ## 🔗 Additional Resources
 
 - Visit the official [8 Week SQL Challenge website](https://8weeksqlchallenge.com/) for more details about the case study.
-- Check out the video series on the [iThinkData YouTube channel](https://www.youtube.com/channel/UCu7SbKQl-NgAQTGZ7wMYAxw) for a step-by-step breakdown of each solution.
+- Check out the video series on the [iThinkData YouTube channel](https://www.youtube.com/@iThinkData) for a step-by-step breakdown of each solution.
 
 ## 🙋‍♂️ About Me
 
-I’m **Vaibhav Chavan**, the creator of [iThinkData](https://www.youtube.com/channel/UCu7SbKQl-NgAQTGZ7wMYAxw). Join me as I dive into the world of data analytics, SQL, and business insights, and solve real-world challenges step-by-step.
+I’m **Vaibhav Chavan**, the creator of [iThinkData](https://www.youtube.com/@iThinkData). Join me as I dive into the world of data analytics, SQL, and business insights, and solve real-world challenges step-by-step.
