@@ -10,7 +10,7 @@ The 8 Week SQL Challenge is a set of eight case studies designed to help individ
 
 This repository is organized into eight folders, each corresponding to a specific case study from the challenge:
 
-- **Case Study #1: Danny's Diner**  
+- **[Case Study #1: Danny's Diner](Case Study #1 - Danny's Diner)**  
   Focus: Simple aggregations, joins, and date-based filtering.
 
 - **Case Study #2: Pizza Runner**  
