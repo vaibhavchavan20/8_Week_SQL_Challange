@@ -55,7 +55,7 @@ I’m **Vaibhav Chavan**, the creator of [iThinkData](https://www.youtube.com/@i
 
 **🌟 Stay Connected with iThinkData ! 🌟**
 
-**👨‍💼 [LinkedIn](https://linkedin.com/in/vaibhav-chavan) :** 📊 Let’s connect professionally and build a powerful data-driven network! 💼🌐
+**👨‍💼 [LinkedIn](https://linkedin.com/in/vaibhav-chavan) :**                             📊 Let’s connect professionally and build a powerful data-driven network! 💼🌐
 
 **💬 Join My [WhatsApp Channel](https://whatsapp.com/channel/0029VaoircxInlqLbopDNS2K) :** 📱 Be the first to get exclusive content, project updates, and new videos! 🚀📊
 
