@@ -18,6 +18,8 @@ In this folder, you will find the following files:
 - **Questions and Answers Queries.sql**: This file contains all the queries used to answer the case study questions.
 - **Questions And Answers with Queries and Output.pdf**: Each question is answered with the query and the output generated.
 
+  **Note: All Solutions are coded with MySQL**
+
 ## 📑 Table of Contents
 
 1. **Q1: What is the total amount each customer spent at the restaurant?**
