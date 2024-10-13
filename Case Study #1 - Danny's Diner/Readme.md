@@ -25,7 +25,7 @@ In this folder, you will find the following files:
 ## 📑 Table of Contents
 
 1. **Q1: What is the total amount each customer spent at the restaurant?**
-   ```SQL
+```sql
 SELECT
 sales.customer_id,
 SUM(menu.price) AS 'Total Spending in $'
@@ -34,11 +34,8 @@ INNER JOIN menu ON
 sales.product_id=menu.product_id
 GROUP BY sales.customer_id
 ORDER BY sales.customer_id;
+```
 
-   ```
-   - [SQL Solution](#)
-   - [Explanation](#)
-   - [Output](#)
 
 3. **Q2: How many days has each customer visited the restaurant?**
    - [SQL Solution](#)
