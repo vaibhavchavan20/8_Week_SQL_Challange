@@ -35,7 +35,7 @@ sales.product_id=menu.product_id
 GROUP BY sales.customer_id
 ORDER BY sales.customer_id;
 ```
-| Customer ID | Total Sales |
+| customer_id | Total Spending in $ |
 |-------------|-------------|
 | A           | 76          |
 | B           | 74          |
@@ -43,12 +43,19 @@ ORDER BY sales.customer_id;
 
 
 2. **Q2: How many days has each customer visited the restaurant?**
-   - [SQL Solution](#)
-   - [Explanation](#)
-   - [Output](#)
 
-... (and so on for other questions)
+3. 2. **Q2: How many days has each customer visited the restaurant?**
+  
+2. **Q2: How many days has each customer visited the restaurant?**
+3. 2. **Q2: How many days has each customer visited the restaurant?**
+   3. 2. **Q2: How many days has each customer visited the restaurant?**
+      3. 2. **Q2: How many days has each customer visited the restaurant?**
+         3. 2. **Q2: How many days has each customer visited the restaurant?**
+            3. 
 
-## 🔗 Additional Resources
+
+
+
+
 
 For a detailed walkthrough of this case study, visit the video on [iThinkData YouTube channel](https://www.youtube.com/@iThinkData).
